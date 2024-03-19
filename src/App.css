@@ -52,3 +52,8 @@ body{
 .btn:hover img{
   filter: brightness(80%);
 }
+
+.Win{
+  border: 10px dotted green;
+}
+
