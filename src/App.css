@@ -54,6 +54,15 @@ body{
 }
 
 .Win{
-  border: 10px dotted green;
+  border: 10px dashed green;
+}
+
+.reset{
+  margin-left: 20px;
+  padding: 0 10px;
+  border-radius: 10px;
+  background: #4d59fb;
+  color: white;
+  font-size: 20px;
 }
 

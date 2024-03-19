@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Button = ({onClick, image}) => {
+const Button = ({onClick, img}) => {
   return (
 	<div onClick={onClick} className="btn">
-		<img src={image} alt=''/>
+		<img src={img} alt=''/>
 	</div>
   )
 }

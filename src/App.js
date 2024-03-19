@@ -58,6 +58,12 @@ function App() {
     }
     
   }
+  function reset(){
+    setResult('Tie')
+    setScore({user:0, computer:0})
+    setUser({name:'paper', image:'/img/paper.png', status:''})
+    setComputer({name:'paper', image:'/img/paper.png', status:''})
+  }
   return (
     <div>
       <div className="container">
@@ -69,8 +75,9 @@ function App() {
         <div className="result">{result}</div>
         <div className="buttons">
           {smallImages.map((img, index)=>
-            <Button onClick={()=>play(types[index])} key={index} image={img} />
+            <Button onClick={()=>play(types[index])} key={index} img={img} />
           )}
+          <button className="reset" onClick={reset}>reset</button>
         </div>
       </div>
     </div>
