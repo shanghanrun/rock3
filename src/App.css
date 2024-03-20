@@ -83,3 +83,43 @@ body{
   transform: scale(1.2)
 }
 
+
+.Win {
+  animation: winnerAction 1s ease infinite;
+}
+
+.Lose {
+  animation: loserAction 1s ease infinite;
+}
+
+
+
+
+
+@keyframes winnerAction {
+  0%,
+  100% {
+      transform: rotate(0deg);
+  }
+  25% {
+      transform: rotate(-5deg);
+  }
+  50% {
+      transform: rotate(0deg);
+  }
+  75%{
+      transform: rotate(5deg);
+  }
+}
+
+/* @keyframes loserAction {
+  form {
+      transform: rotate(1deg) scale(0.99);
+  }
+  to {
+      transform: rotate(-1deg) scale(1.01);
+  }
+} */
+
+
+
