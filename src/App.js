@@ -1,10 +1,11 @@
 
-import {useState} from 'react'
+import {useState, useRef} from 'react'
 import './App.css';
 import Button from './components/Button';
 import Box from './components/Box';
 
 function App() {
+  const buttonsRef = useRef()
   const types = ['rock', 'scissors', 'paper']
   const smallImages=['/img/r1.png', '/img/s1.png', '/img/p1.png']
   const bigImages =['/img/rock.png', '/img/scissors.png', 'img/paper.png']
@@ -59,21 +60,26 @@ function App() {
     
   }
   function reset(){
+    buttonsRef.current.style.transform = 'rotateX(360deg)';
     setResult('Tie')
     setScore({user:0, computer:0})
     setUser({name:'paper', image:'/img/paper.png', status:''})
     setComputer({name:'paper', image:'/img/paper.png', status:''})
+    // 초기화를 1초 후에 수행합니다.
+    setTimeout(() => {
+      buttonsRef.current.style.transform = '';
+    }, 1000); 
   }
   return (
     <div>
       <div className="container">
-        <div className="score">스코어: {score.user} : {score.computer}</div>
+        <div className="score" >스코어: {score.user} : {score.computer}</div>
         <div className="boxes">
           <Box who={user}  />
           <Box who={computer} />
         </div>
         <div className="result">{result}</div>
-        <div className="buttons">
+        <div className="buttons" ref={buttonsRef}>
           {smallImages.map((img, index)=>
             <Button onClick={()=>play(types[index])} key={index} img={img} />
           )}

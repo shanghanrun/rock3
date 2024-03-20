@@ -5,7 +5,7 @@ body{
 .container{
   margin-top: 50px;
   padding: 40px;
-  width: 80vw;
+  width: 60vw;
   border: 2px solid black;
 }
 
@@ -39,7 +39,7 @@ body{
   display:flex;
   justify-content: center;
   gap: 10px;
-  
+  transition: all 1s;
 }
 
 .btn{
@@ -57,7 +57,14 @@ body{
 
 .Win{
   border: 10px dashed green;
-  color: green
+  color: green;
+  font-weight: bold;
+}
+.Lose{
+  color: pink
+}
+.Tie{
+  color: blue
 }
 
 .reset{
